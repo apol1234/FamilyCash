@@ -10,7 +10,7 @@ import javax.inject.Singleton;
 
 import rx.Observable;
 import rx.functions.Func1;
-import uk.co.ribot.androidboilerplate.data.local.DatabaseHelper;
+import com.softstyle.familycash.data.local.DatabaseHelper;
 import uk.co.ribot.androidboilerplate.data.local.PreferencesHelper;
 import uk.co.ribot.androidboilerplate.data.model.Ribot;
 import uk.co.ribot.androidboilerplate.data.remote.RibotsService;
