@@ -14,11 +14,13 @@ import com.google.gson.TypeAdapter;
 
 @AutoValue
 public abstract class Account implements Parcelable {
-    public abstract String first();
-    public abstract String last();
+    public abstract long id();
+    public abstract String name();
+    public abstract String currency();
+    public abstract Double amount();            // initial sum
 
-    public static Account create(String first, String last) {
-        return new AutoValue_Account(first, last);
+    public static Account create(long id, String name, String cur, Double amount) {
+        return new AutoValue_Account(id, name, cur, amount);
     }
 
     public static TypeAdapter<Account> typeAdapter(Gson gson) {
