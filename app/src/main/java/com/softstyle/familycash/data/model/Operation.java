@@ -23,14 +23,15 @@ public abstract class Operation implements Parcelable {
     public abstract long    id();
     public abstract long    acc_id();
     public abstract String  name();
+    public abstract long    item_id();
 
     public abstract Sign     sign();
     public abstract Double   sum();
     @Nullable public abstract long link_op_id();        // linked operation. Need for move money between accounts
 
 
-    public static Operation create(long id, long acc_id, String name, Sign sign, Double sum, long lo_id) {
-        return new AutoValue_Operation(id, acc_id, name, sign, sum, lo_id);
+    public static Operation create(long id, long acc_id, String name, long item_id, Sign sign, Double sum, long lo_id) {
+        return new AutoValue_Operation(id, acc_id, name, item_id, sign, sum, lo_id);
     }
 
     public static TypeAdapter<Operation> typeAdapter(Gson gson) {
