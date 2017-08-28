@@ -12,20 +12,22 @@ import rx.Observable;
 import rx.functions.Func1;
 import com.softstyle.familycash.data.local.DatabaseHelper;
 import uk.co.ribot.androidboilerplate.data.local.PreferencesHelper;
-import uk.co.ribot.androidboilerplate.data.model.Ribot;
-import uk.co.ribot.androidboilerplate.data.remote.RibotsService;
+import com.softstyle.familycash.data.model.Account;
+import com.softstyle.familycash.data.model.Operation;
+import com.softstyle.familycash.data.model.Item;
+//import uk.co.ribot.androidboilerplate.data.remote.RibotsService;
 
 @Singleton
 public class DataManager {
 
-    private final RibotsService mRibotsService;
+    //private final RibotsService mRibotsService;
     private final DatabaseHelper mDatabaseHelper;
     private final PreferencesHelper mPreferencesHelper;
 
     @Inject
-    public DataManager(RibotsService ribotsService, PreferencesHelper preferencesHelper,
+    public DataManager( PreferencesHelper preferencesHelper,
                        DatabaseHelper databaseHelper) {
-        mRibotsService = ribotsService;
+        //mRibotsService = ribotsService;
         mPreferencesHelper = preferencesHelper;
         mDatabaseHelper = databaseHelper;
     }
@@ -34,6 +36,7 @@ public class DataManager {
         return mPreferencesHelper;
     }
 
+    /*
     public Observable<Ribot> syncRibots() {
         return mRibotsService.getRibots()
                 .concatMap(new Func1<List<Ribot>, Observable<Ribot>>() {
@@ -43,9 +46,17 @@ public class DataManager {
                     }
                 });
     }
+    */
+    public Observable<List<Account>> getAccounts() {
+        return mDatabaseHelper.getAccounts().distinct();
+    }
 
-    public Observable<List<Ribot>> getRibots() {
-        return mDatabaseHelper.getRibots().distinct();
+    public Observable<List<Item>> getItems() {
+        return mDatabaseHelper.getItems().distinct();
+    }
+
+    public Observable<List<Operation>> getOperations() {
+        return mDatabaseHelper.getOperations().distinct();
     }
 
 }

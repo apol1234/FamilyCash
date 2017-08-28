@@ -1,6 +1,5 @@
 package com.softstyle.familycash.data.model;
 
-import android.graphics.Path;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 
