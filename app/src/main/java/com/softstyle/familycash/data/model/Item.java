@@ -19,7 +19,7 @@ public abstract class Item implements Parcelable {
     public abstract long            parent_id();                // we need items tree
     public abstract String          name();
     public abstract Operation.Sign  sign();                     // item may be for income or for expense
-    public abstract Date            date_end();                 // item has lifetime
+    @Nullable public abstract Date            date_end();                 // item has lifetime
 
     public static Item create(long id, long parent_id, String name, Operation.Sign sign, Date date_end) {
         return new AutoValue_Item(id, parent_id, name, sign, date_end);

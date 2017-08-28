@@ -14,9 +14,12 @@ import com.google.gson.TypeAdapter;
 public abstract class Operation implements Parcelable {
     public enum Sign {
         PLUS , MINUS;
-        int sign() {
+        public int sign() {
             if( this.equals(PLUS) ) return 1;
             else return -1;
+        }
+        public static Sign fromInt( int s) {
+            if( s > 0 ) return PLUS; else return MINUS;
         }
     }
     public abstract long    id();
@@ -26,7 +29,7 @@ public abstract class Operation implements Parcelable {
 
     public abstract Sign     sign();
     public abstract Double   sum();
-    @Nullable public abstract long link_op_id();        // linked operation. Need for move money between accounts
+    @Nullable public abstract Long link_op_id();        // linked operation. Need for move money between accounts
 
 
     public static Operation create(long id, long acc_id, String name, long item_id, Sign sign, Double sum, long lo_id) {

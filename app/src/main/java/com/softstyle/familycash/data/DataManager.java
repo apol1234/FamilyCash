@@ -11,7 +11,7 @@ import javax.inject.Singleton;
 import rx.Observable;
 import rx.functions.Func1;
 import com.softstyle.familycash.data.local.DatabaseHelper;
-import uk.co.ribot.androidboilerplate.data.local.PreferencesHelper;
+import com.softstyle.familycash.data.local.PreferencesHelper;
 import com.softstyle.familycash.data.model.Account;
 import com.softstyle.familycash.data.model.Operation;
 import com.softstyle.familycash.data.model.Item;
