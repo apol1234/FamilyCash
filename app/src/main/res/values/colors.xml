@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#222222</color>
-    <color name="primary_dark">#000000</color>
+    <color name="primary">#8BC34A</color>
+    <color name="primary_dark">#33691E</color>
+    <color name="secondary">#ecd3c5</color>
+    <color name="secondary_dark">#ae8168</color>
+    <color name="main_background_gray">#F1F8E9</color>
     <color name="accent">#FFFFFF</color>
     <color name="gray">#ffdfdfdf</color>
+    <color name="toolbar_orange">#FF9B00</color>
+    <color name="sliding_menu_text_color">#8C8C8C</color>
+    <color name="sliding_menu_color">#FAFAFA</color>
+    <color name="actionbar_text">#F1F8E9</color>
 </resources>

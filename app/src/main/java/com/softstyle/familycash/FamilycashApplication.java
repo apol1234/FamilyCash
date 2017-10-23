@@ -19,10 +19,13 @@ import com.softstyle.familycash.injection.module.ApplicationModule;
 public class FamilycashApplication extends Application  {
 
     ApplicationComponent mApplicationComponent;
+    private static FamilycashApplication mApp;
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        mApp = this;
 
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
@@ -34,6 +37,9 @@ public class FamilycashApplication extends Application  {
         return (FamilycashApplication) context.getApplicationContext();
     }
 
+    public static FamilycashApplication get() {
+        return mApp;
+    }
     public ApplicationComponent getComponent() {
         if (mApplicationComponent == null) {
             mApplicationComponent = DaggerApplicationComponent.builder()

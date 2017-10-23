@@ -12,6 +12,7 @@ import dagger.Module;
 import dagger.Provides;
 //import com.softstyle.familycash.data.remote.FamilycashService;
 import com.softstyle.familycash.injection.ApplicationContext;
+import com.softstyle.familycash.ui.mainmenu.MainMenu;
 
 /**
  * Provide application-level dependencies.
@@ -42,4 +43,11 @@ public class ApplicationModule {
         return RibotsService.Creator.newRibotsService();
     }
     */
+
+    @Provides
+    @Singleton
+    MainMenu provideMainMenu() {
+        return new MainMenu(provideContext());
+    }
+
 }

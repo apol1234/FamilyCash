@@ -30,7 +30,7 @@ public class AccountsAdapter extends RecyclerView.Adapter<AccountsAdapter.Accoun
         mAccounts = new ArrayList<>();
     }
 
-    public void setRibots(List<Account> accs) {
+    public void setAccounts(List<Account> accs) {
         mAccounts = accs;
     }
 

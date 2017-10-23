@@ -42,7 +42,7 @@ public class MainPresenter extends BasePresenter<MainMvpView> {
         if (mSubscription != null) mSubscription.unsubscribe();
     }
 
-    public void loadRibots() {
+    public void loadAccounts() {
         checkViewAttached();
         RxUtil.unsubscribe(mSubscription);
         mSubscription = mDataManager.getAccounts()
@@ -60,11 +60,11 @@ public class MainPresenter extends BasePresenter<MainMvpView> {
                     }
 
                     @Override
-                    public void onNext(List<Account> ribots) {
-                        if (ribots.isEmpty()) {
+                    public void onNext(List<Account> accounts) {
+                        if (accounts.isEmpty()) {
                             getMvpView().showAccountsEmpty();
                         } else {
-                            getMvpView().showAccounts(ribots);
+                            getMvpView().showAccounts(accounts);
                         }
                     }
                 });

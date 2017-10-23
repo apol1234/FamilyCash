@@ -17,6 +17,7 @@ import com.softstyle.familycash.data.local.PreferencesHelper;
 //import com.softstyle.familycash.data.remote.FamilycashService;
 import com.softstyle.familycash.injection.ApplicationContext;
 import com.softstyle.familycash.injection.module.ApplicationModule;
+import com.softstyle.familycash.ui.mainmenu.MainMenu;
 import com.softstyle.familycash.util.RxEventBus;
 
 @Singleton
@@ -32,5 +33,5 @@ public interface ApplicationComponent {
     DatabaseHelper databaseHelper();
     DataManager dataManager();
     RxEventBus eventBus();
-
+    MainMenu mainMenu();
 }

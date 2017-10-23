@@ -4,6 +4,8 @@ package com.softstyle.familycash.ui.base;
  * Created by ap on 29.08.2017.
  */
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -17,6 +19,7 @@ import com.softstyle.familycash.injection.component.ActivityComponent;
 import com.softstyle.familycash.injection.component.ConfigPersistentComponent;
 import com.softstyle.familycash.injection.component.DaggerConfigPersistentComponent;
 import com.softstyle.familycash.injection.module.ActivityModule;
+import com.softstyle.familycash.ui.main.MainActivity;
 
 /**
  * Abstract activity that every other Activity in this application must implement. It handles
@@ -73,4 +76,13 @@ public class BaseActivity extends AppCompatActivity {
         return mActivityComponent;
     }
 
+    /**
+     * Return an Intent to start this Activity.
+     * triggerDataSyncOnCreate allows disabling the background sync service onCreate. Should
+     * only be set to false during testing.
+     */
+
+    public static Intent getStartIntent(Context context, boolean triggerDataSyncOnCreate) {
+        return null;
+    }
 }

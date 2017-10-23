@@ -42,7 +42,7 @@ public class DataManager {
                 .concatMap(new Func1<List<Ribot>, Observable<Ribot>>() {
                     @Override
                     public Observable<Ribot> call(List<Ribot> ribots) {
-                        return mDatabaseHelper.setRibots(ribots);
+                        return mDatabaseHelper.setAccounts(ribots);
                     }
                 });
     }

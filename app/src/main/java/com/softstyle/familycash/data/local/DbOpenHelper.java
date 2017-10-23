@@ -19,7 +19,7 @@ import com.softstyle.familycash.injection.ApplicationContext;
 public class DbOpenHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "familycash.db";
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
 
     @Inject
     public DbOpenHelper(@ApplicationContext Context context) {
@@ -48,7 +48,9 @@ public class DbOpenHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("insert into " + Db.AccountTable.TABLE_NAME + "(id,name,currency,amount) values (1,'a1','rur','0.0');");
+    }
 
 }
 
